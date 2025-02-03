@@ -18,7 +18,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const fs_1 = __nccwpck_require__(147);
 const host = "https://gitlab.com";
-const token = "YOUR TOKEN HERE";
+const token = process.argv[2];
+if (!token) {
+    console.error('Error: Please provide a GitLab personal access token as an argument.');
+    process.exit(1);
+}
+//const token = "YOUR TOKEN HERE";
 const maxRequestsPerMinute = 30; // Set your desired limit here
 // Function to fetch all repositories for a given organization with throttling
 function getAllRepositoriesWithThrottle(maxRequestsPerMinute) {

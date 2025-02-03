@@ -2,7 +2,12 @@ import { promises as fs } from 'fs';
 
 
 const host = "https://gitlab.com";
-const token = "YOUR TOKEN HERE";
+const token = process.argv[2];
+if (!token) {
+  console.error('Error: Please provide a GitLab personal access token as an argument.');
+  process.exit(1);
+}
+//const token = "YOUR TOKEN HERE";
 const maxRequestsPerMinute = 30; // Set your desired limit here
 
 

@@ -3,5 +3,4 @@ repos/
 .DS_Store
 repositories.json
 unique-contributors-others.txt
-.gitignore
 unique-contributors.txt
